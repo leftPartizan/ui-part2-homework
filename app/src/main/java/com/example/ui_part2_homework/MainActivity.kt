@@ -5,9 +5,12 @@ import android.os.Bundle
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
 import com.example.ui_part2_homework.fragments.FirstFragment
+import com.example.ui_part2_homework.fragments.SecondFragment
 
 
 class MainActivity : AppCompatActivity() {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -18,6 +21,13 @@ class MainActivity : AppCompatActivity() {
                 add(R.id.firstFragmentContainerView, firstFragment)
                 commit()
             }
+            supportFragmentManager.beginTransaction().apply {
+                setReorderingAllowed(true)
+                val secondFragment = SecondFragment()
+                add(R.id.firstFragmentContainerView, secondFragment)
+                commit()
+            }
+
         }
     }
 }

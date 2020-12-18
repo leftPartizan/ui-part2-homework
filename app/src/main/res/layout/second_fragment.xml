@@ -8,34 +8,34 @@
 
 
     <TextView
-        android:id="@+id/firstFragmentName"
+        android:id="@+id/secondFragmentName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="50sp"
         android:gravity="center"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/firstFragmentCounter"
-        android:text="first fragment"/>
+        app:layout_constraintBottom_toTopOf="@+id/secondFragmentCounter"
+        android:text="second fragment"/>
 
     <TextView
-        android:id="@+id/firstFragmentCounterText"
+        android:id="@+id/secondFragmentCounterText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="50sp"
-        app:layout_constraintTop_toBottomOf="@+id/firstFragmentName"
+        app:layout_constraintTop_toBottomOf="@+id/secondFragmentName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/firstFragmentCounter"
+        app:layout_constraintEnd_toStartOf="@+id/secondFragmentCounter"
         android:text="counter"/>
 
     <TextView
-        android:id="@+id/firstFragmentCounter"
+        android:id="@+id/secondFragmentCounter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="50sp"
-        app:layout_constraintTop_toBottomOf="@+id/firstFragmentName"
+        app:layout_constraintTop_toBottomOf="@+id/secondFragmentName"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/firstFragmentCounterText"
+        app:layout_constraintStart_toEndOf="@+id/secondFragmentCounterText"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="0"/>
 
