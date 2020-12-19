@@ -16,10 +16,11 @@ class SecondFragment: Fragment(R.layout.second_fragment) {
 
         val bindingFragment = SecondFragmentBinding.bind(view)
         val counterManager = CounterManager()
+        val countValue = counterManager.getCounter(arguments)
+        bindingFragment.secondFragmentCounter.text = "$countValue"
 
-        bindingFragment.secondFragmentCounter.setOnClickListener {
-            val countValue = counterManager.getCounter(arguments)
-            bindingFragment.secondFragmentCounter.text = "$countValue"
+        bindingFragment.secondFragmentName.setOnClickListener {
+
             parentFragmentManager.beginTransaction().apply {
                 setReorderingAllowed(true)
                 add(R.id.firstFragmentContainerView, SecondFragment::class.java,
@@ -27,11 +28,6 @@ class SecondFragment: Fragment(R.layout.second_fragment) {
                 addToBackStack(null)
 
                 commit()
-            }
-        }
-        bindingFragment.secondFragmentCounterText.setOnClickListener{
-            if (bindingFragment.secondFragmentCounter.text == "0"){
-                bindingFragment.secondFragmentCounterText.text = "0"
             }
         }
     }

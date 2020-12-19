@@ -8,7 +8,7 @@ import com.example.ui_part2_homework.databinding.FirstFragmentBinding
 import com.example.ui_part2_homework.utils.CounterManager
 
 
-class FirstFragment: Fragment(R.layout.first_fragment) {
+class FirstFragmentChild: Fragment(R.layout.first_fragment) {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -21,24 +21,15 @@ class FirstFragment: Fragment(R.layout.first_fragment) {
 
         bindingFragment.firstFragmentName.setOnClickListener {
 
-            childFragmentManager.beginTransaction().apply {
+            parentFragmentManager.beginTransaction().apply {
                 setReorderingAllowed(true)
-                val childFragment = FirstFragmentChild()
-                add(R.id.firstFragmentContainerView, childFragment)
+                add(R.id.firstFragmentContainerView, FirstFragmentChild::class.java,
+                        counterManager.createArgs(countValue+1))
                 addToBackStack(null)
 
                 commit()
             }
 
-//            parentFragmentManager.beginTransaction().apply {
-//                setReorderingAllowed(true)
-//
-//                add(R.id.firstFragmentContainerView, FirstFragment::class.java,
-//                    counterManager.createArgs(countValue+1))
-//                addToBackStack(null)
-//
-//                commit()
-//            }
         }
     }
 
