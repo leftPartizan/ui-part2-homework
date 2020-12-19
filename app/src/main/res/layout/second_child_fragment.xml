@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/childSecondFragmentName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="50sp"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/childSecondFragmentCounter"
+        android:text="second fragment"/>
+
+    <TextView
+        android:id="@+id/childSecondFragmentCounterText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50sp"
+        app:layout_constraintTop_toBottomOf="@+id/childSecondFragmentName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/childSecondFragmentCounter"
+        android:text="counter"/>
+
+    <TextView
+        android:id="@+id/childSecondFragmentCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50sp"
+        app:layout_constraintTop_toBottomOf="@+id/childSecondFragmentName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/childSecondFragmentCounterText"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="0"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

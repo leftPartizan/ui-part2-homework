@@ -2,8 +2,6 @@ package com.example.ui_part2_homework
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.add
-import androidx.fragment.app.commit
 import com.example.ui_part2_homework.fragments.FirstFragment
 import com.example.ui_part2_homework.fragments.SecondFragment
 import com.example.ui_part2_homework.databinding.ActivityMainBinding
@@ -27,15 +25,16 @@ class MainActivity : AppCompatActivity() {
 
             supportFragmentManager.beginTransaction().apply {
                 setReorderingAllowed(true)
-                add(R.id.firstFragmentContainerView, firstFragment)
-                setPrimaryNavigationFragment(firstFragment)
+                add(R.id.fragmentContainerViewMain, secondFragment)
+                add(R.id.fragmentContainerViewMain, firstFragment)
                 commit()
             }
         }
         binding.firstButton.setOnClickListener{
                 supportFragmentManager.beginTransaction().apply {
                     setReorderingAllowed(true)
-                    replace(R.id.firstFragmentContainerView, firstFragment)
+                    detach(secondFragment)
+                    attach(firstFragment)
                     setPrimaryNavigationFragment(firstFragment)
                     commit()
                 }
@@ -44,7 +43,8 @@ class MainActivity : AppCompatActivity() {
         binding.secondButton.setOnClickListener{
             supportFragmentManager.beginTransaction().apply {
                 setReorderingAllowed(true)
-                replace(R.id.firstFragmentContainerView, secondFragment)
+                detach(firstFragment)
+                attach(secondFragment)
                 setPrimaryNavigationFragment(secondFragment)
 
                 commit()

@@ -11,35 +11,17 @@ import com.example.ui_part2_homework.utils.CounterManager
 class FirstFragment: Fragment(R.layout.first_fragment) {
 
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        childFragmentManager.beginTransaction().apply {
+            setReorderingAllowed(true)
+            val childFragment = FirstFragmentChild()
+            add(R.id.fragmentContainerCounterFirst, childFragment)
+            addToBackStack(null)
 
-        val bindingFragment = FirstFragmentBinding.bind(view)
-        val counterManager = CounterManager()
-        val countValue = counterManager.getCounter(arguments)
-        bindingFragment.firstFragmentCounter.text = "$countValue"
-
-        bindingFragment.firstFragmentName.setOnClickListener {
-
-            childFragmentManager.beginTransaction().apply {
-                setReorderingAllowed(true)
-                val childFragment = FirstFragmentChild()
-                add(R.id.firstFragmentContainerView, childFragment)
-                addToBackStack(null)
-
-                commit()
-            }
-
-//            parentFragmentManager.beginTransaction().apply {
-//                setReorderingAllowed(true)
-//
-//                add(R.id.firstFragmentContainerView, FirstFragment::class.java,
-//                    counterManager.createArgs(countValue+1))
-//                addToBackStack(null)
-//
-//                commit()
-//            }
+            commit()
         }
+
     }
 
 }

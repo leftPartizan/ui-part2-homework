@@ -2,42 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="#FCFF9800">
 
-
-    <TextView
-        android:id="@+id/firstFragmentName"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerCounterFirst"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="50sp"
-        android:gravity="center"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/firstFragmentCounter"
-        android:text="first fragment"/>
-
-    <TextView
-        android:id="@+id/firstFragmentCounterText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="50sp"
-        app:layout_constraintTop_toBottomOf="@+id/firstFragmentName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/firstFragmentCounter"
-        android:text="counter"/>
-
-    <TextView
-        android:id="@+id/firstFragmentCounter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="50sp"
-        app:layout_constraintTop_toBottomOf="@+id/firstFragmentName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/firstFragmentCounterText"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="0"/>
-
+        android:layout_height="match_parent">
+    </androidx.fragment.app.FragmentContainerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
