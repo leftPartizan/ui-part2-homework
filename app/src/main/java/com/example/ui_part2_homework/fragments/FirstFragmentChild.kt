@@ -23,8 +23,7 @@ class FirstFragmentChild: Fragment(R.layout.first_child_fragment) {
 
             parentFragmentManager.beginTransaction().apply {
                 setReorderingAllowed(true)
-
-                add(R.id.fragmentContainerCounterFirst, FirstFragmentChild::class.java,
+                replace(R.id.fragmentContainerCounterFirst, FirstFragmentChild::class.java,
                         counterManager.createArgs(countValue+1))
                 addToBackStack(null)
 

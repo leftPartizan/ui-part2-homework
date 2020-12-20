@@ -14,7 +14,6 @@ class SecondFragment: Fragment(R.layout.second_fragment) {
             setReorderingAllowed(true)
             val childFragment = SecondFragmentChild()
             add(R.id.fragmentContainerCounterSecond, childFragment)
-            addToBackStack(null)
 
             commit()
         }

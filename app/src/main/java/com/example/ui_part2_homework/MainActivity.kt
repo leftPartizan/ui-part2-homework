@@ -2,6 +2,7 @@ package com.example.ui_part2_homework
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.example.ui_part2_homework.fragments.FirstFragment
 import com.example.ui_part2_homework.fragments.SecondFragment
 import com.example.ui_part2_homework.databinding.ActivityMainBinding
@@ -17,6 +18,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d("Fragment2","oncreate")
+
 
         val secondFragment = SecondFragment()
         val firstFragment = FirstFragment()
