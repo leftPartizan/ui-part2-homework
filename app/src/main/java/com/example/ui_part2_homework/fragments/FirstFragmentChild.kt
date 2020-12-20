@@ -8,6 +8,8 @@ import com.example.ui_part2_homework.databinding.FirstChildFragmentBinding
 import com.example.ui_part2_homework.utils.CounterManager
 
 
+
+
 class FirstFragmentChild: Fragment(R.layout.first_child_fragment) {
 
 
@@ -31,5 +33,4 @@ class FirstFragmentChild: Fragment(R.layout.first_child_fragment) {
             }
         }
     }
-
 }

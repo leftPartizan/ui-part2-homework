@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import com.example.ui_part2_homework.R
 
 
+
+
 class SecondFragment: Fragment(R.layout.second_fragment) {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,6 +20,5 @@ class SecondFragment: Fragment(R.layout.second_fragment) {
 
             commit()
         }
-
     }
 }
